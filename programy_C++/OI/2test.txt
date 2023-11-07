@@ -16,7 +16,16 @@ koncivy ptipad
 
 3 3 1 3 3 3 1 3 3 3
 
-3
+ 3
 3 1 3 1 3 1 3 3 1 3
 1 1 3 3 5 5 7 8 
 0 0 1 1 2 2 3 3
+
+1
+14 3
+3 1 3 1 3 1 1 3 3 1 3 3 3 1 (napisat zaciatok akoniec rovnakych za sebou)
+1 4| 3,1;5,2;x=zk[4]+(6-4)+zk[6],6-4
+2 pozicia posledneho videneho| pair{pocet,potrebne prefarbit=pozicia-ppv}
+3 6| 3,1;5,2->6,2;        
+                  
+  
