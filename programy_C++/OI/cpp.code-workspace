@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../../proboj.v7/templates/cpp"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		}
+	}
+}
