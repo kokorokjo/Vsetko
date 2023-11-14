@@ -22,6 +22,7 @@ int main(){
             dlzka[i-j]=pocet;
         }
         posledny[hlavny[i]]=i;
+        pozicie[hlavny[i]].push_back({dlzka[i],i-pocet+1-posledny[hlavny[i]]});
     }
 
 
@@ -41,5 +42,12 @@ int main(){
         cout<<i<<" ";
     }
     cout<<endl;
-
+    for(int i=0;i<n;i++){
+        if(pozicie[i].size()==0)continue;
+        cout<<i<<": ";
+        for(auto j:pozicie[i]){
+            cout<<j.first<<" "<<j.second<<" | ";
+        }
+        cout<<endl;
+    }
 }
