@@ -4,30 +4,25 @@ using namespace std;
 
 int main(){
 
-    int n,k,pocet=0;
-    int naj1=0,naj2=0;
-    cin>>n;
-    pocet=n-2;
-    for(int i=0;i<n;i++){
-        cin>>k;
-        if(k>naj1){
-            naj2=naj1;
-            naj1=k;
-        }
-        else if(k>naj2){
-            naj2=k;
-        }
-        if(k<1){
-            pocet--;
+    int n,m;
+    cin >> n >> m;
+    int pocet = 0;
+    vector<vector<char>> v(n+2, vector<char>(m+2, '.'));
+
+    for(int i=1; i<n+1; i++){
+        for(int j=1; j<m+1; j++){
+            cin >> v[i][j];
         }
     }
-    if(naj2-1<1){
-        cout<<0<<endl;
-        return 0;
+    for(int i=1; i<n+1; i++){
+        for(int j=1; j<m+1; j++){
+            if(v[i][j] == '/'){
+                if(v[i+1][j+1]=='/' && v[i+1][j] =='\\'&& v[i][j+1] =='\\'){
+                    pocet++;
+                }
+            }
+        }
+        
     }
-    if(naj2-1<pocet){
-        cout<<naj2-1<<endl;
-        return 0;
-    }
-    cout<<pocet<<endl;
+    cout << pocet << endl;
 }

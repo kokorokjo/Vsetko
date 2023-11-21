@@ -9,8 +9,8 @@ void printCombinations(string neviem, int size, int k) {
         return;
     }
     for (int i=0;i<k; i++) {
-        string newPrefix = prefix + (char)('a' + i);
-        printCombinations(neviem, size - 1, k);
+        string nneviem = neviem + (char)('a' + i);
+        printCombinations(nneviem, size - 1, k);
     }
 }
 
