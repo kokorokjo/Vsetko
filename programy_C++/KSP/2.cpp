@@ -14,15 +14,39 @@ int main(){
             string kopia=neviem;
             vector<pair<char,int>> v;
             int pocitadlo=0;
-            for(int i=0;i<kopia.size();i++){
-                if(i==)
+            v.push_back(make_pair(kopia[0],1));
+            kopia[0]=49;
+            for(int i=1;i<kopia.size();i++){
+                bool je=false;
+                for(int j=0;j<v.size();j++){
+                    if(v[j].first==kopia[i]){
+                        kopia[i]=v[j].second+49;
+                        je=true;
+                        break;
+
+                    }
+                }
+                if(!je){
+                    if(v.size()==1){
+                        kopia[i]=48;
+                        v.push_back(make_pair(kopia[i],0));
+                    
+                    }
+                    else{
+                    v.push_back(make_pair(kopia[i],v.size()-1));
+                    kopia[i]=v.size()+47;
+                    }
+                }
             }
 
+            cout<<"sustava"<<sustava<<"asi"<<kopia<<endl;
+            int sum=0;
 
-            for(int i=zasiatok;i<32;i++){ 
+            for(int i=0;i<kopia.size();i++){ 
                 sum*=sustava;
                 sum+=kopia[i]-48;
                 }
+                cout<<sum<<endl;
         if(sum>vysledok){
             vysledok=sum;
         }
