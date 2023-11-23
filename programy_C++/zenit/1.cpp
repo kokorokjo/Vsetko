@@ -12,12 +12,10 @@ int main(){
         cin>>p;
         v.push_back(p);
     }
-    int predosle=0;
     int koniec=0;
     for(int i=0;i<n;i++){
         if(a==0){
             a=v[i];
-            predosle=i;
         }
         if(b==0&&v[i]!=a){
             b=v[i];
@@ -29,6 +27,14 @@ int main(){
             koniec=i;
             pocet=2;
             a=v[i-1];
+            for(int j=i-2;j>=0;j--){
+                if(v[j]==a){
+                    pocet++;
+                }
+                else{
+                    break;
+                }
+            }
             b=v[i];
             
         }
