@@ -1,65 +1,75 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+
 int main(){
 
     int n;
     cin >> n;
-    int vysledok=0;
-    
-    for(int asi=0;asi<n;asi++){
-        string neviem;
-        cin>>neviem;
-        for(int sustava=2;sustava<11;sustava++){
-            string kopia=neviem;
-            vector<pair<char,int>> v;
-            int pocitadlo=0;
-            v.push_back(make_pair(kopia[0],1));
-            kopia[0]=49;
-            for(int i=1;i<kopia.size();i++){
-                bool je=false;
-                for(int j=0;j<v.size();j++){
-                    if(v[j].first==kopia[i]){
-                        kopia[i]=v[j].second+49;
-                        je=true;
-                        break;
-
-                    }
+   
+    for(int vsetko=0;vsetko<n;vsetko++){
+        int vysledok=INT_MAX;
+        string hlavny;
+        cin>>hlavny;
+        string pomocny=hlavny;
+        vector<pair<int,char>> cisielka;
+        vector<int> cisielka2(123,-1);
+        cisielka.push_back(make_pair(1,hlavny[0]));
+        cisielka2[hlavny[0]]=1;
+        pomocny[0]='1';
+        for(int i=0;i<hlavny.size();i++){
+            if(cisielka2[hlavny[i]]==-1){
+                cisielka.push_back(make_pair(0,hlavny[i]));
+                cisielka2[hlavny[i]]=0;
+                pomocny[i]='0';
+                break;
+            }
+        }
+        //  cout<<"este"<<pomocny<<endl;
+        for(int i=0;i<hlavny.size();i++){
+            int pomocne=-1;
+            
+                if(cisielka2[hlavny[i]]!=-1){
+                    pomocne=cisielka2[hlavny[i]];
                 }
-                if(!je){
-                    if(v.size()==1){
-                        kopia[i]=48;
-                        v.push_back(make_pair(kopia[i],0));
-                    
-                    }
-                    else{
-                    v.push_back(make_pair(kopia[i],v.size()-1));
-                    kopia[i]=v.size()+47;
-                    }
-                }
+            if(pomocne==-1){
+                cisielka.push_back(make_pair(cisielka.size(),hlavny[i]));
+                cisielka2[hlavny[i]]=cisielka.size();
+                pomocny[i]=cisielka.size()+48-1;
+            }
+            else{
+                pomocny[i]=pomocne+48;
             }
 
-            cout<<"sustava"<<sustava<<"asi"<<kopia<<endl;
-            int sum=0;
-
-            for(int i=0;i<kopia.size();i++){ 
-                sum*=sustava;
-                sum+=kopia[i]-48;
-                }
-                cout<<sum<<endl;
-        if(sum>vysledok){
-            vysledok=sum;
         }
+        //  cout<<pomocny<<endl;
 
-
-
-
-
-
-        }
         
+        for(int sustava=cisielka.size();sustava<=10;sustava++){
+            if(sustava==1){
+                continue;
+            }
+            int pocet=0;
+            for(int i=0;i<pomocny.size();i++){
+                pocet*=sustava;
+                pocet+=pomocny[i]-48;
+            }
+            // cout<<sustava<<" "<<pocet<<endl;
+            if(pocet<vysledok){
+                vysledok=pocet;
+            }
+        }
+        cout<<vysledok<<endl;
+
+
+
+
+
+
+
     }
-    //48
+
 
 
 }
