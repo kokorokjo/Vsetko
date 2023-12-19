@@ -4,13 +4,35 @@ using namespace std;
 int main(){
     int n;
     cin>>n;
-    vector<vector<int>> hlavny(n);
-    vector<int> idk(n,0);
-    for(int i=1;i<n;i++){
-        int a,b;
-        cin>>a>>b;
-        hlavny[b].push_back(a);
-        hlavny[a].push_back(b);
+    long long sucet=0;
+    vector<int> v(n);
+    int min,max;
+    for(int i=0;i<n;++i) cin>>v[i];
+    for(int i=0;i<n;i++){
+        
+        for(int j=i+1;j<n;j++){
+            if(j==i+1){
+                if(v[i]>v[j]){
+                min=v[j];
+                max=v[i];
+            }
+            else{
+                min=v[i];
+                max=v[j];
+            }
+
+            }
+            else{
+                if(v[j]<min) min=v[j];
+                if(v[j]>max) max=v[j];
+            }
+            sucet+=max-min;
+            
+
+
+        }
     }
+    cout<<sucet<<endl;
+    return 0;
 
 }
