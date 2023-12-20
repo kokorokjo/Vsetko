@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int SIZE = 5;
+int SIZE = 6;
 int najviac=0;
 vector<vector<bool>> vysledny;
 vector<pair<int, int>> positions,vysledok;
