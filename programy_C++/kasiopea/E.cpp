@@ -1,101 +1,93 @@
+// Autor: Benjamin Swart
 #include <bits/stdc++.h>
-using namespace std;
 
-bool nieco=false;
-bool koniec=false;
+std::optional<std::string> solve(std::string message, std::vector<std::string> dictionary)
+{
+    std::size_t max_word_length = 0;
 
-void rekurzia(string hlavny, vector<string> v, vector<string> &vysledok,vector<string> pomocny,string s, int index, int najvacsi){
-    
-    for(int i=index+s.size();i<hlavny.size();i++){
-        if(koniec) break;
-        s+=hlavny[i];
-        if(s.size()>najvacsi) break;
-        for(int k=0;k<v.size();k++){
-            if(s==v[k]){
-                
-                s+=hlavny[i+1];
-                for(int f=0;f<v[k+1].size();f++){
-                    nieco=true;
-                    if(v[k+1][f]==s[f]) {
-                        if(f==s.size()-1){
-                        nieco=true;
-                        break;
-                    }
-                        continue;
-                    }
-                    else {
-                        nieco=false;
-                        break;
-                    };
-                    
-                }
-                if(nieco){
-                    string s1=s;
-                    s=s.substr(0,s.size()-1);
-                    rekurzia(hlavny, v, vysledok, pomocny, s,index, najvacsi);
-                    s=s1;
-                }
-                s=s.substr(0,s.size()-1);
-                pomocny.push_back(s);
-                index+=s.size();
-                s="";
-                
-            }
+    for (std::string &word : dictionary)
+        max_word_length = std::max(max_word_length, word.size());
+
+    std::sort(dictionary.begin(), dictionary.end());
+
+    std::vector<std::optional<std::size_t>> possible_from = {0};
+
+    for (std::size_t i = 0; i < message.size(); i++)
+    {
+        std::optional<size_t> best_start;
+
+        for (std::size_t length = 1; length <= max_word_length; length++)
+        {
+            if (length > i + 1)
+                break;
+
+            std::size_t start = i - (length - 1);
+
+            if (!possible_from[start])
+                continue;
+
+            std::string word = message.substr(start, length);
+
+            if (std::binary_search(dictionary.begin(), dictionary.end(), word))
+                best_start = start;
         }
-        
-        
-        
-    
-    }
-    if(!koniec){
-    if(index==hlavny.size()){
-        for(int i=0;i<pomocny.size();i++){
-            vysledok.push_back(pomocny[i]);
-        }
-        koniec=true;
-    }
-    }
-    
 
+        possible_from.push_back(best_start);
+    }
+
+    if (!possible_from.back())
+        return {};
+
+    std::vector<bool> spaces(message.size());
+    std::size_t end = *possible_from.back();
+
+    while (end != 0)
+    {
+        spaces[end] = true;
+        end = *possible_from[end];
+    }
+
+    std::string result;
+
+    for (std::size_t i = 0; i < message.size(); i++)
+    {
+        if (spaces[i])
+            result.push_back(' ');
+
+        result.push_back(message[i]);
+    }
+
+    return result;
 }
 
-int main(){
-    int t;
-    ifstream MyReadFile("E-tezky (4).txt");
-    ofstream MyFile("E-vysledok.txt");
-    MyReadFile >> t;
+int main()
+{
+    std::uint64_t problem_count;
+    std::cin >> problem_count;
 
-    for(int all=0; all<t; all++){
-        int n;
-        MyReadFile >> n;
-        string hlavny;
-        MyReadFile >> hlavny;
-        vector<string> v;
-        int najvacsi=0;
-        for(int i=0; i<n; i++){
-            string s;
-            MyReadFile >> s;
-            v.push_back(s);
-            if(s.size()>najvacsi) najvacsi=s.size();
-        }
-        sort(v.begin(), v.end());
-        v.push_back("0");
-        vector<string> vysledok;
-        rekurzia(hlavny, v, vysledok, {}, "",0,najvacsi);
-        
-        if(vysledok.size()==0) MyFile << "NE"<< endl;
-        else MyFile << "ANO" << endl;
-        for(int i=0; i<vysledok.size(); i++){
-            MyFile << vysledok[i];
-            if(i!=vysledok.size()-1) MyFile << " ";
-            else MyFile << endl;
-        }
+    for (std::uint64_t p = 0; p < problem_count; p++)
+    {
+        std::uint64_t word_count;
+        std::cin >> word_count;
 
-        nieco=false;
-        koniec=false;
-        cout<<all<<endl;
+        std::string message;
+        std::cin >> message;
+
+        std::vector<std::string> dictionary(word_count);
+
+        for (std::uint64_t w = 0; w < word_count; w++)
+            std::cin >> dictionary[w];
+
+        std::optional<std::string> result = solve(message, dictionary);
+
+        if (result)
+        {
+            std::cout << "ANO" << std::endl;
+            std::cout << *result << std::endl;
+        }
+        else
+        {
+            std::cout << "NE" << std::endl;
+        }
     }
-    MyReadFile.close();
-    MyFile.close();
-    cout<<"hotovo"<<endl;
 }
