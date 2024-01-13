@@ -1,0 +1,15 @@
+Hlavná logika je že najprv si vstup premenim na císlo a potom vypočítam pre 
+každu sústavu vysledok a porovnám
+
+Začneme tým že načítam riadok a určím si že prvé musí byť 1(aby bolo číslo čo najmenšie a nie 0)
+to si zapišem že to pismeno je 1 a idem dalej pozriem sa na pismeno a prejdem pole v ktorom
+mám napisané či to pismeno ma už pridelené čislo ak nie tak pidám dalšie ak ano tak tam dám to.
+Takto prejdem celý string.
+Potom už len pre každu sustavu dopočitam čislo -> pocet*=sustava,pocet+=pomocny[i];
+Nakoniec si zapisujem ktorý je najmenši a ten vypíšem
+
+časová zložitosť- najprv prechádzam string a pridávam čislice (prejdenie pola s už 
+priradenými ciframy 10*dĺžka stringu l)+ potom prejdem pre každú sústavu cely string
+9*l a toto všetko pre každý string * t  o(19*l*t) alebo o(l*t).
+
+pamäťová zložitosť- pamätáme si iba jeden string o(l)

@@ -1,0 +1,10 @@
+Hlavná logika je že pre kazdú poziciu vypočitam suČet pre všetky intervali v ktorých je 
+a zaroven som ich uz nezarátal.
+
+Začneme tým že si zoberem prve čislo a druhe najdem min max a vypocitam max- min a pripočítam k vysledku.
+Náslene zoberem 3. zistim či sa min max nezmenily a zase vypočítam a pripočítam. tak až na koniec.
+Potom zoberem druhe čislo s tretím a zistim min max a vypočitam atď. 
+
+časová zložitosť- pre každé číslo prejdem skoro každé ine o(n*n).
+
+pamäťová zložitosť- pamätáme si iba vstup o(n)

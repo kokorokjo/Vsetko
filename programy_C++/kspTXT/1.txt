@@ -1,0 +1,11 @@
+Hlavná logika je že prejdeme cele pole a ked najdeme jeden kus diamantu tak sa pozrieme
+či je to diamant.
+
+Začneme tým že postupne prechádzame pole a ak najdeme "/" tak sa pozrieme
+či o jedno doprava a je "\" zaroven od pôvodnej o jedno dole "\" a zaroveň 
+od pôvodnej o jedno dole a doprava "/" ak ano je to diamant a propocitame to 
+k vysledku ktory na konci vypíšem.
+
+časová zložitosť- najväčší čas zaberie načitanie/prechadzanie vstupu o(n*m).
+
+pamäťová zložitosť- pamätáme si iba vstup o(n*m)
