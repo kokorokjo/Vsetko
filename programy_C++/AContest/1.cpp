@@ -15,7 +15,7 @@ int main(){
         if(s=="INV"){
             vysledok.push_back(v[0].second);
         }
-        else{c
+        else{
             int x;
             x = stoi(s);
             if(pozicie[x]!=-1){
