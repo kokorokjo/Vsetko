@@ -1,8 +1,38 @@
 def encode(n: int, plain_text: str) -> str:     # vraci ciphertext typu String
-    pass
+    k=0
+    z=0
+    vysledok=""
+    nieco=False
+    while nieco==False:
+        k+=n
+        if k>=len(plain_text):
+            k=len(plain_text)
+            nieco =True
+        daco=plain_text[z:k]
+        z=k
+        string = list(daco)
+        string.reverse()
+        vysledok+="".join(string)
+    return vysledok
+    
+    
 
 def decode(n: int, cipher_text: str) -> str:    # vraci plaintext typu String
-    pass
+    k=0
+    z=0
+    vysledok=""
+    nieco=False
+    while nieco==False:
+        k+=n
+        if k>=len(cipher_text):
+            k=len(cipher_text)
+            nieco =True
+        daco=cipher_text[z:k]
+        z=k
+        string = list(daco)
+        string.reverse()
+        vysledok+="".join(string)
+    return vysledok
 
 # Testy:
 print(encode(3, "Ahoj"))    # ohAj
