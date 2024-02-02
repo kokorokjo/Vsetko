@@ -1,6 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
+bool is_prime(long long n) {
+    if (n == 1) {
+        return false;
+=======
 
 int main(){
     vector<pair<int,int>> v;
@@ -66,7 +71,31 @@ int main(){
     cout<<"vysldky"<<endl;
     for(int i = 0; i < vysledok.size(); i++){
         cout << vysledok[i] << endl;
+>>>>>>> d56c00a484959d3a84d7e0444f52f0a6a106adce
     }
 
+    int i = 2;
 
+    while (i*i <= n) {
+        
+        if (n % i == 0) {
+            return false;
+        }
+        i += 1;
+    }
+   
+    return true;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    for(int x=0; x<t; x++) {
+        long long n;
+        cin >> n;
+        cout  << (is_prime(n) ? "ANO" : "NIE") << endl;
+        
+    }
+
+    return 0;
 }
