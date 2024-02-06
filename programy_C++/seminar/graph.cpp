@@ -25,10 +25,12 @@ Graph::Graph(int V){
 
 void Graph::addEdge(int v, int w){
     adj[v].push_back(w);
+    adj[w].push_back(v);
 }
 
 void Graph::eraseEdge(int v, int w){
     adj[v].erase(remove(adj[v].begin(), adj[v].end(), w), adj[v].end());
+    adj[w].erase(remove(adj[w].begin(), adj[w].end(), v), adj[w].end());
 }
 
 int Graph::degree(int v){
@@ -124,11 +126,24 @@ int main(){
     g.addEdge(0, 1);
     g.addEdge(0, 2);
     g.addEdge(1, 2);
+    g.addEdge(2, 3);
+    g.eraseEdge(1, 2);
     g.isConected(0, 1) ? cout << "Yes\n" : cout << "No\n";
+    cout<<"degree: "<<g.degree(0)<<endl;
     vector<int> asi=g.getNeighbours(0);
+    cout<<"neighbours: ";
     for(auto i: asi){
         cout << i << " ";
     }
+    cout<<endl;
+    cout<<"Components: "<<g.no_components()<<endl;
+    cout<<"vzdialenost medzi 0,3: "<<g.distance(0, 3)<<endl;
+    vector<int> path = g.shortestPath(0, 3);
+    cout<<"path: ";
+    for(auto i: path){
+        cout << i << " ";
+    }
+    cout<<endl;
     
 
     return 0;
