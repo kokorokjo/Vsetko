@@ -1,0 +1,26 @@
+# ninja log v5
+28	73	0	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	ce0655a30e6af2da
+151	485	7293785694450738	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/timestamp	a043f1cddd8afea5
+562	664	7293779062061281	CMakeFiles/TextFinder.dir/TextFinder_autogen/EWIEGA46WW/qrc_TextFinder.cpp.obj	44a6128747be1f79
+540	562	7293779060672712	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/EWIEGA46WW/qrc_TextFinder.cpp	9ceccd2007ddaec7
+1101	4160	7293783660644914	CMakeFiles/TextFinder.dir/main.cpp.obj	1dade813caaf6a66
+531	4917	7293785738779988	CMakeFiles/TextFinder.dir/textfinder.cpp.obj	94de80e9c0b8f178
+95	204	7293786074285053	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp	b8a7c80cbbee9420
+151	485	7293785694450738	TextFinder_autogen/mocs_compilation.cpp	a043f1cddd8afea5
+151	485	7293785694450738	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/mocs_compilation.cpp	a043f1cddd8afea5
+1799	2974	7293769311931876	CMakeFiles/TextFinder.dir/TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp.obj	7771d3b1d2691582
+95	204	7293786074285053	TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp	b8a7c80cbbee9420
+4917	5295	7293785742476168	TextFinder.exe	c65ee7d68d0037d
+1094	4084	7293783659885715	CMakeFiles/TextFinder.dir/TextFinder_autogen/mocs_compilation.cpp.obj	d7cdade0b120a0d6
+151	485	7293785694450738	TextFinder_autogen/timestamp	a043f1cddd8afea5
+97	1427	7293794273363700	build.ninja	839ddba8fd0a9520
+31	79	0	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	ce0655a30e6af2da
+102	389	7293794280907497	TextFinder_autogen/timestamp	a043f1cddd8afea5
+102	389	7293794280907497	TextFinder_autogen/mocs_compilation.cpp	a043f1cddd8afea5
+102	389	7293794280907497	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/timestamp	a043f1cddd8afea5
+102	389	7293794280907497	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/mocs_compilation.cpp	a043f1cddd8afea5
+439	538	7293794282326025	TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp	9a7813d8073120a9
+439	538	7293794282326025	C:/Users/marti/Desktop/GitVsetko/Vsetko/Qt/build-TextFinder-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp	9a7813d8073120a9
+543	659	7293794283594705	CMakeFiles/TextFinder.dir/TextFinder_autogen/EWIEGA46WW/qrc_textfinder.cpp.obj	7771d3b1d2691582
+538	4332	7293794320345211	CMakeFiles/TextFinder.dir/textfinder.cpp.obj	94de80e9c0b8f178
+4332	4650	7293794323427241	TextFinder.exe	5afd32a97e785488
