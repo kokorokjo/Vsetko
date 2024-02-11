@@ -1,5 +1,8 @@
 def encode(n: int, plain_text: str) -> str:     # vraci ciphertext typu String
-    pass
+
+    
+
+    
 
 def decode(n: int, cipher_text: str) -> str:    # vraci plaintext typu String
     pass
