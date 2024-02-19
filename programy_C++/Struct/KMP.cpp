@@ -7,7 +7,7 @@ vector<int> KMP(string text, string pattern)
 {
     vector<int> next(pattern.size()+1);
 
-    //Compute next
+    
     next[0] = -1;
     for(int i=0; i<pattern.size(); i++)
     {
@@ -16,7 +16,7 @@ vector<int> KMP(string text, string pattern)
         next[i+1] = back+1;
     }
 
-    //Process the string
+    
     vector<int> result;
     int position = 0;
     for(int i=0; i<text.size(); i++)

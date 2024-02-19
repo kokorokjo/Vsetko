@@ -2,9 +2,9 @@
 
 using namespace std;
 
-int n;                         // pocet vrcholov
-vector<vector<int> > sused(n); // zoznam susedov
-vector<bool> cerveny(n);       // true, ak je dany vrchol zeleny
+int n;                         
+vector<vector<int> > sused(n); 
+vector<bool> cerveny(n);      
 
 void dfs(int Z)
 {

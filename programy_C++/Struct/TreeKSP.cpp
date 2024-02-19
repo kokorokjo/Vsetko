@@ -1,27 +1,25 @@
-class intervalovy_strom //vonkajsia trieda reprezentujuca cely strom
+class intervalovy_strom 
 {
-    class vrchol //trieda, ktorej instancie reprezentuju vrcholy
+    class vrchol 
     {
         int hodnota;
-        int zaciatok, koniec; //zaciatok a koniec mojho intervalu
-        vrchol *lavy, *pravy; //smerniky na synov
-
+        int zaciatok, koniec; 
+        vrchol *lavy, *pravy; 
     public:
 
-        //konstruktor. Vytvori vrchol zodpovedajuci intervalu [zac, kon) 
-        //aj s celym podstromom
+       
         vrchol(int zac, int kon) : zaciatok(zac), koniec(kon) 
         {
             hodnota = 0;
 
-            //ak este nie som list, vyrobim aj svojich synov s podstromami
+            
             if(koniec - zaciatok > 1)  
             {
                 int stred = (zaciatok + koniec)/2;
                 lavy = new vrchol(zaciatok, stred);
                 pravy = new vrchol(stred, koniec);
             }
-            else //ak som list, tak nemam synov
+            else 
             {
                 lavy = pravy = NULL;
             }
@@ -29,18 +27,18 @@ class intervalovy_strom //vonkajsia trieda reprezentujuca cely strom
 
         void zmen(int i, int h)
         {
-            if(zaciatok == i && koniec == i+1) //ak som i-ty list, zmenim si hodnotu
+            if(zaciatok == i && koniec == i+1) 
             {
                 hodnota = h;
                 return;
             }
             int stred = (zaciatok + koniec)/2;
 
-            //ak je i-ty list v lavom podstrome, delegujem poziadavku lavemu synovi
+            
             if(i < stred) lavy -> zmen(i, h);  
-            else pravy->zmen(i, h);            //ak je v pravom, tak pravemu synovi
+            else pravy->zmen(i, h);         
 
-            //pri vynarani z rekurzie sa aktualizujem
+            
             hodnota = lavy->hodnota + pravy->hodnota; 
         }
 
@@ -48,10 +46,10 @@ class intervalovy_strom //vonkajsia trieda reprezentujuca cely strom
         {
             if(l >= koniec || r <= zaciatok) return 0;
             if(l <= zaciatok && r >= koniec) return hodnota;
-            return lavy->sucet(l, r) + pravy->sucet(l, r);  //delegovanie na synov
+            return lavy->sucet(l, r) + pravy->sucet(l, r);  
         }
 
-        ~vrchol() //destruktor
+        ~vrchol() 
         {
             if(lavy != NULL) delete lavy;
             if(pravy != NULL) delete pravy;
@@ -64,7 +62,7 @@ public:
     intervalovy_strom(int velkost)
     {
         int n = 1;
-        while(n < velkost) n *= 2; //najdeme najblizsiu vacsiu mocninu dvojky
+        while(n < velkost) n *= 2; 
         koren = new vrchol(0, n);
     }
     //   intervalovy_strom(int velkost)

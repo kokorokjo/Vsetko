@@ -16,7 +16,7 @@ int najdenieKorena(vector<int>& rodic, int i) {
     auto res = najdenieKorena(rodic, rodic[i]);
     rodic[i] = res;
     return res;
-    //path compression
+    
 }
 void zlucenieStromov(vector<int>& rodic, int x, int y) {
     int rootX = najdenieKorena(rodic, x);
