@@ -3,5 +3,6 @@
     "files.associations": {
         "iosfwd": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/martin/Desktop/Programy/Qt/TextFinder"
 }
