@@ -1,1 +1,1 @@
-V topto priecinku je vsetko co pouzivam na sutaze a v skole
+V tomto priecinku je všetko, čo používam na súťaže a v škole.
