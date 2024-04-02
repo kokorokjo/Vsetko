@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}\\app.js"
+      }
+    ],
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cpp.exe build active file",
+            "command": "C:\\MinGW\\bin\\cpp.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: C:\\MinGW\\bin\\cpp.exe"
+        }
+    ]
+  }
