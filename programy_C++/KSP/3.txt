@@ -1,0 +1,5 @@
+v(i,j)=v(i,k)+v(k,j)
+
+v(a,b) = |a−b|+|ra−rb|
+
+

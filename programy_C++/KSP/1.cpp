@@ -1,28 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct point{
+    int x,y;
+};
+
+
+
 
 int main(){
 
-    int n,m;
-    cin >> n >> m;
-    int pocet = 0;
-    vector<vector<char>> v(n+2, vector<char>(m+2, '.'));
-
-    for(int i=1; i<n+1; i++){
-        for(int j=1; j<m+1; j++){
-            cin >> v[i][j];
-        }
+    int n;
+    int s,v;
+    cin >> n >> s >> v;
+    vector<point> a(n);
+    for(int i=0;i<n;i++){
+        cin >> a[i].x >> a[i].y;
     }
-    for(int i=1; i<n+1; i++){
-        for(int j=1; j<m+1; j++){
-            if(v[i][j] == '/'){
-                if(v[i+1][j+1]=='/' && v[i+1][j] =='\\'&& v[i][j+1] =='\\'){
-                    pocet++;
-                }
+    vector<vector<int>> inside(n);
+    for(int i=0;i<n;++i){
+        for(int j=i+1;j<n;++j){
+            if(a[i].x>=a[j].x && a[i].x+s<a[j].x){
+                inside[i].push_back(j);
+                inside[j].push_back(i);
             }
         }
-        
     }
-    cout << pocet << endl;
+    
+
 }
