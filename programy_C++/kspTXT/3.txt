@@ -1,16 +1,9 @@
-Hlavná logika je že najprv si pre každú plochu miestnosti zistim do akej miestnosti patrí
-a potom pre každú stenu zistím ako moc sa mi oplatí ju zbúrať.
+Hlavná logika je že prejdeme všetky možnosti trojíc a vypočítame či môže byť.
 
-Začneme tým že pri načítavani s dám do queue prázdne miesta a do druhej odstrániťeľné steny.
-Potom z prvej queue berem miesta a spustím algoritmus liacej vody tj. ze sa pozriem či som v susedoch
-už bol ak nie dam ich do 3. queue a oznacím si to čislom miestnost (pri každej Ďalšiej miestnosti je 
-väčšie čislo). Takto si označim jednu miestnosť (mezdi tým si zapisujem koľko tam bolo prázdnych miest)
-to si zapíšem.
-Potom vyberem z 1. queue dalšiu miestonsť ak je označena tak vyberem ďalšiu lebo tu miestnosť mám spracovanú.
-Nakoniec použijem 2. queue a pre kazdú stenu zistím akú miestnosť dostanem ked ju odstránim.
-Tak že sa pozriem na susedov tej steny a pozriem koľko maju tie miestnosti prázdnych miest. Najväčšie si zapíšem.
+Začneme tým že si zobereme prvé 3 a vypočitame či môŽe byť v(i,j)=v(i,k)+v(k,j) (najprv i=0,j=1,k=2
+potom i=0,j=2,k=1 a atď) potom posúvam posledný index až na koniec potom posuniem 2. index o jedna a zase to iste 
+(posúvam posledný index) nakoniec posuvam aj prvý. Medzi tým si zapisujem čo vyhovujú.
 
-časová zložitosť- je načítanie pola + prejdenie kazdej nesteny raz + kazdej steny raz čo je stale 2 krat prejdenie 
-pola velkosti 2n+1 * 2m+1  o(n*m).
+časová zložitosť- prejdenie pola pre každý index čo je 3 indexi n na 3 o(n3).
 
-pamäťová zložitosť- pamätáme si pola o(m*n)
+pamäťová zložitosť- pamätáme si pola o(n)

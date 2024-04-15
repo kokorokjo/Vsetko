@@ -1,15 +1,12 @@
-Hlavná logika je že najprv si vstup premenim na císlo a potom vypočítam pre 
-každu sústavu vysledok a porovnám
+Hlavná logika je že budem chcieť zobrať za moderátora vždy toho čo ide najneskôr.
 
-Začneme tým že načítam riadok a určím si že prvé musí byť 1(aby bolo číslo čo najmenšie a nie 0)
-to si zapišem že to pismeno je 1 a idem dalej pozriem sa na pismeno a prejdem pole v ktorom
-mám napisané či to pismeno ma už pridelené čislo ak nie tak pidám dalšie ak ano tak tam dám to.
-Takto prejdem celý string.
-Potom už len pre každu sustavu dopočitam čislo -> pocet*=sustava,pocet+=pomocny[i];
-Nakoniec si zapisujem ktorý je najmenši a ten vypíšem
+Začneme tým že si vytvorím unordered_map aby som k mohol k počítadlu ľudi mohol pristupovať linearne. TakŽe logika
+je že si to rodzelim na kola(kolo končí keď sa mení moderátor) v ktorom kazdý vystúpil aspoň raz a ten čo posledný dostane cenu
+tak pojde moderovať a kolo skončí. (toto sa nám oplatí dať moderátora posledného lebo ostatný sa mozu v preberaní cien meniť a aj keby nie
+tak potom je to aj tak jedno lebo ak by som dal skoršieho ktorý by si isiel po cenu tiež iba raz tak to je jedno). To spravím tak že si do unordered_map
+zapisujem ak si ide po cenu ak v tomto kole ešte nebol a ak id eprvy krat tak pocitadlo++ ak uz počitadlo==k tak už boli všetci po cenu a resetnem počitadlo 
+a pridam kolo(a tvarím sa že toto kolo moderoval ten posledný čo si isiel po cenu). Nakoniec vypíŠem pocet kôl(počet výmen)
 
-časová zložitosť- najprv prechádzam string a pridávam čislice (prejdenie pola s už 
-priradenými ciframy 10*dĺžka stringu l)+ potom prejdem pre každú sústavu cely string
-9*l a toto všetko pre každý string * t  o(19*l*t) alebo o(l*t).
+časová zložitosť- prechadzam kazdeho čo si ide po cenu iba raz (k) a este mena (h) a to t-krat o((k+h)*t).
 
-pamäťová zložitosť- pamätáme si iba jeden string o(l)
+pamäťová zložitosť- pamätáme si iba mená o(h)

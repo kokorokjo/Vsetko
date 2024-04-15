@@ -4,33 +4,24 @@ using namespace std;
 
 
 int main() {
-    vector<int> v;
-    int a = 4, b = 7;
-    int pocet=0;
-    int p;
-    cin>>p;
-    for(int i=0;i<p;i++){
-        int a;
-        cin>>a;
-        v.push_back(a);
-    }
-    for(int i=0;i<v.size();i++){
-        for(int j=i+1;j<v.size();j++){
-            // cout<<v[i]<<" "<<v[j]<<endl;
-            a=v[i];
-            b=v[j];
-        
-       
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    int pocitadlo=0+n+n-1;
+    for (int i = 0; i < n; i++) cin >> v[i];
 
-    if((a&b)>(a^b)){
-        pocet++;
-    
+    for (int i = 0; i < n; i++) {
+        for(int j = i+1; j < n; j++) {
+            for(int k = j+1; k < n; k++) {
+                int v1=abs(v[i]-v[j])+abs(i-j);
+                int v2=abs(v[i]-v[k])+abs(i-k);
+                int v3=abs(v[j]-v[k])+abs(j-k);
+                if(v1!=v2+v3 && v2!=v1+v3 && v3!=v1+v2) {
+                    pocitadlo++;
+                }
+            }
         }
- 
-   
     }
-
-    }
-     cout<<pocet<<endl;
-    return 0;
+    cout<<pocitadlo<<endl;
+    
 }

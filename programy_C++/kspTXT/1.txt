@@ -1,11 +1,13 @@
-Hlavná logika je že prejdeme cele pole a ked najdeme jeden kus diamantu tak sa pozrieme
-či je to diamant.
+Hlavná logika je že zoberem prvý obdĺžnik a vyhodim všetky čo su v ňom a potom zoberiem
+ďalší najbližší čo môžem.
 
-Začneme tým že postupne prechádzame pole a ak najdeme "/" tak sa pozrieme
-či o jedno doprava a je "\" zaroven od pôvodnej o jedno dole "\" a zaroveň 
-od pôvodnej o jedno dole a doprava "/" ak ano je to diamant a propocitame to 
-k vysledku ktory na konci vypíšem.
+Začneme tým že sa pozerám iba na x-ove súradnice lebo to je jedno akú bude mat y-ovu lebo aj tak bude 
+zasahovať do ďalšieho obdĺžnika iba ak sa budú prekrývať X-kovou súradnice. Zoberiem si prvý obdĺžnik. Potom sa pozeram na ďalšieh
+a ak sa prekrývaju (x2<x1+s) tak idem na ďalší ak nie tak zoberiem ten a pokračujem rovnako. Prečo toto možem robiť je lebo keď mám ten 
+prvý tak ak ďalši čo je v ňom tak by prekrýval prvý(kedŽe všetky čo začali v prvom koncia aspoň tam kde končí prvý a ak začali pred tak 
+to nie je možne lebo buď by som ho zobral alebo prekrýva predošlý) ale aj čo 
+(ak majú rovnake Xko tak iba to) tie čo su medzi x1+s a x2+s.
 
-časová zložitosť- najväčší čas zaberie načitanie/prechadzanie vstupu o(n*m).
+časová zložitosť- najväčší čas zaberie načitanie/prechadzanie vstupu o(n).
 
-pamäťová zložitosť- pamätáme si iba vstup o(n*m)
+pamäťová zložitosť- pamätáme si iba vstup o(n)
