@@ -3,36 +3,39 @@ using namespace std;
 
 int main(){
     int n;
-    cin>>n;
-    long long sucet=0;
-    vector<int> v(n);
-    int min,max;
-    for(int i=0;i<n;++i) cin>>v[i];
-    for(int i=0;i<n;i++){
-        
-        for(int j=i+1;j<n;j++){
-            if(j==i+1){
-                if(v[i]>v[j]){
-                min=v[j];
-                max=v[i];
+    string s;
+    cin >> n >> s;
+    vector<int> a(n);
+    vector<int> b(n,-1);
+    for(int i=0;i<n;++i){
+        cin >> a[i];
+    }
+    for(int i=n-1;i>=0;--i){
+        int p=a[i];
+        int pozicia=i;
+        int pocitadlo=0; 
+        int min=INT_MAX;
+        while(true){
+            pozicia+=p;
+            pocitadlo++;
+            if(pozicia>=n){
+                if(pocitadlo<min){
+                    min=pocitadlo;
+                }
+                b[i]=min;
+                break;
             }
-            else{
-                min=v[i];
-                max=v[j];
+            if(b[pozicia]==p){
+                b[i]=b[pozicia]+pocitadlo;
+                break;
             }
-
+            if(b[i]+pocitadlo<min){
+                min=b[i]+pocitadlo;
             }
-            else{
-                if(v[j]<min) min=v[j];
-                if(v[j]>max) max=v[j];
-            }
-            sucet+=max-min;
-            
 
 
         }
     }
-    cout<<sucet<<endl;
-    return 0;
+    cout<<b[0]<<endl;
 
 }
