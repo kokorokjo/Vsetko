@@ -25,17 +25,21 @@ int main(){
                 b[i]=min;
                 break;
             }
-            if(b[pozicia]==p){
+            if(a[pozicia]==p){
+                if(b[pozicia]+pocitadlo<min){
                 b[i]=b[pozicia]+pocitadlo;
                 break;
             }
-            if(b[i]+pocitadlo<min){
-                min=b[i]+pocitadlo;
+            }
+            if(b[pozicia]+pocitadlo<min){
+                min=b[pozicia]+pocitadlo;
             }
 
 
         }
     }
+
+    
     cout<<b[0]<<endl;
 
 }
