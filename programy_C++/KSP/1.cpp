@@ -3,29 +3,49 @@ using namespace std;
 
 
 int main(){
-    int n;
-    cin >> n;
-    int s,v;
-    cin >> s >> v;
-    vector<int> a(n);
-    for(int i=0;i<n;i++){
-        cin >> a[i];
-        int x;
-        cin >> x;
-    }
-    
-    int max = 1;
-    int last = a[0];
-    for(int i=0;i<n;i++){
-        if(s+last>a[i]){
-            
-            continue;
+    long long s,n;
+    cin>>s>>n;
+    long long pocitadlo=0;
+    long long vysledok=0;
+    long long kde=0;
+    for(long long i=0;i<n;i++){
+        long long v,k;
+        cin>>v>>k;
+        if(k==1){
+            pocitadlo+=v;
+            kde=i;
+            if(pocitadlo==s)
+            {
+                vysledok++;
+                
+            }
+            break;
+
         }
-        max++;
-        last=a[i];
-        
+        kde=i;
     }
-    cout<<max<<endl;
+    for(long long i=kde+1;i<n;i++){
+        long long v,k;
+        cin>>v>>k;
+        if(k==0){
+            pocitadlo+=v;
+            if(pocitadlo==s)
+            {
+                vysledok++;
+                
+            }
+        }
+        else{
+            pocitadlo=v;
+            if(pocitadlo==s)
+            {
+                vysledok++;
+                
+            }
+        }
+    }
+    cout<<vysledok<<endl;
+    
 
     
 }
