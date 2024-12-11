@@ -1,9 +1,14 @@
-Hlavná logika je že prejdeme všetky možnosti trojíc a vypočítame či môže byť.
+Hlavná logika je že pojdem od zadu a budem si zapisovať na koľko prezutí sa viem dostať do cieľa.
 
-Začneme tým že si zobereme prvé 3 a vypočitame či môŽe byť v(i,j)=v(i,k)+v(k,j) (najprv i=0,j=1,k=2
-potom i=0,j=2,k=1 a atď) potom posúvam posledný index až na koniec potom posuniem 2. index o jedna a zase to iste 
-(posúvam posledný index) nakoniec posuvam aj prvý. Medzi tým si zapisujem čo vyhovujú.
+Miesta s topankami si dam do binárneho stromu v poradí ako sú za senou (aby sa mi lepšie prehladávalo) a zapisem si 2 hodnoty
+poličko na akom sú umiestnené a počet políčok ktoré sa s nimi dá prejsť. Nasledne idem od zadu pozriem sa na topanky a Zistím
+či sa da s nimi prejsť az do ciela ak hej prepíšem poečet krokov na 1(počeť potrebných prezutí) následne prejdem všetkých rodicou a prepisujem
+ak ==-1 alebo ak prvé z páru je > ako políčko kde sú topanky(toto udavá ake najnižšie políčko ma ako dieťa) a druhe z páru prepíšem ak je > ako počet prezutí
+na ktoré sa viem dostať do ciela z daného políčka. Ale ak sa neviem dostať do cieľa priamo tak idem od koreňa a pozeram napravo ak prvé z dvojce (najnižšie číslo políčka)
+je <ako políčko kde sa viem z daneho políčka dostať tak sa presuniem tam ale najprv zistim či na ľavej strane je menšie 2. z dvojce lebo vieme že naľavo budu políčka na ktoré sa viem určite dostať alebo som ich ešte nespracoval.
+takto sa dostanem až k poslednému políčku(listu). Toto opakujem s každým políčkom s topánkami a nakoniec sa pozriem od začiatku a vypíšem vysledok.
+stromu 
 
-časová zložitosť- prejdenie pola pre každý index čo je 3 indexi n na 3 o(n3).
+časová zložitosť- prejdem každé policko s topankami a prechadzam maximalne výšku stromu o(n log n).
 
-pamäťová zložitosť- pamätáme si pola o(n)
+pamäťová zložitosť- pamätáme si polička s topánkami o(n)

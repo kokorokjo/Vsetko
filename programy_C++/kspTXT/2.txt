@@ -1,12 +1,10 @@
-Hlavná logika je že budem chcieť zobrať za moderátora vždy toho čo ide najneskôr.
+Hlavná logika je že si môžeme predstavit že je to binárne číslo odzadu.
 
-Začneme tým že si vytvorím unordered_map aby som k mohol k počítadlu ľudi mohol pristupovať linearne. TakŽe logika
-je že si to rodzelim na kola(kolo končí keď sa mení moderátor) v ktorom kazdý vystúpil aspoň raz a ten čo posledný dostane cenu
-tak pojde moderovať a kolo skončí. (toto sa nám oplatí dať moderátora posledného lebo ostatný sa mozu v preberaní cien meniť a aj keby nie
-tak potom je to aj tak jedno lebo ak by som dal skoršieho ktorý by si isiel po cenu tiež iba raz tak to je jedno). To spravím tak že si do unordered_map
-zapisujem ak si ide po cenu ak v tomto kole ešte nebol a ak id eprvy krat tak pocitadlo++ ak uz počitadlo==k tak už boli všetci po cenu a resetnem počitadlo 
-a pridam kolo(a tvarím sa že toto kolo moderoval ten posledný čo si isiel po cenu). Nakoniec vypíŠem pocet kôl(počet výmen)
+Funguje to tak že aby prešiel level tak pred koncom musí mať všade jednotky. Keď si všimneme že ako jednotky
+pribudaju tak sa menia rovnako ako keď k binárnemu čislu pripočitam 1. To znamena že mi stači zistiť koľko krát
+musím pripočítať jednotky (alebo koľko krat bude musieť prechadzať po plošikach). Tovypočitam tak že si vytvorím
+z začiatku decimal number a vypočitam hodnotu keby tam boli všade jednotky. Zistím rodiel a to je výsledok
 
-časová zložitosť- prechadzam kazdeho čo si ide po cenu iba raz (k) a este mena (h) a to t-krat o((k+h)*t).
+časová zložitosť- prejdem plánik iba raz a vypočitam 2 bin čísla o(n).
 
-pamäťová zložitosť- pamätáme si iba mená o(h)
+pamäťová zložitosť- stači si pamätať pocet bitov a 2 decimalne čisla  o(1)

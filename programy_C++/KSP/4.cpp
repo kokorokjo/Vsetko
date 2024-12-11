@@ -2,6 +2,8 @@
 using namespace std;
 
 int main(){
-//   najlacnejsia kostra
-
+    int a;
+    cin>>a;
+    a=a+1;
+    cout<<a;
 }
