@@ -2,44 +2,60 @@
 using namespace std;
 
 int main(){
-    int n;
-    string s;
-    cin >> n >> s;
-    vector<int> a(n);
-    vector<int> b(n,-1);
-    for(int i=0;i<n;++i){
-        cin >> a[i];
-    }
-    for(int i=n-1;i>=0;--i){
-        int p=a[i];
-        int pozicia=i;
-        int pocitadlo=0; 
-        int min=INT_MAX;
-        while(true){
-            pozicia+=p;
-            pocitadlo++;
-            if(pozicia>=n){
-                if(pocitadlo<min){
-                    min=pocitadlo;
-                }
-                b[i]=min;
-                break;
-            }
-            if(a[pozicia]==p){
-                if(b[pozicia]+pocitadlo<min){
-                b[i]=b[pozicia]+pocitadlo;
-                break;
-            }
-            }
-            if(b[pozicia]+pocitadlo<min){
-                min=b[pozicia]+pocitadlo;
-            }
 
-
+    long long n=2;
+    long long r;
+    cin >> r;
+    n = pow(n,r+1);
+    vector<long long> hlavny(n,0);
+    vector<vector<long long>> vedlajsi (n, vector<long long>(19,-1));
+    for(long long i=n-1;i>0;i--){
+        long long p;
+        cin >> p;
+        if(i>=n/2){
+            vedlajsi[i][p]=0;
+        }
+        hlavny[i]=p;
+        // cout<<i<<endl;
+   }
+   for(long long i=n-1;i>=n/2;i--){
+    for(long long j=17;j>=0;j--){
+        if(vedlajsi[i][j+1]!=-1){
+            vedlajsi[i][j]=vedlajsi[i][j+1];
         }
     }
+   }
+    for(long long i=n/2-1;i>0;i--){
+    long long dalsi = -1; 
+        for(long long k=17;k>=0;k--){
+            if(vedlajsi[i*2][k]!=-1&&vedlajsi[i*2+1][k]!=-1){
+                long long sucet = vedlajsi[i*2][k]+vedlajsi[i*2+1][k]+hlavny[i];
+                if(dalsi!=-1){
+                    vedlajsi[i][k]=min(sucet,dalsi);
+                }
+                else{
+                    vedlajsi[i][k]=sucet;
+                }
+                if(dalsi!=-1){
+                dalsi = min(dalsi,sucet-hlavny[i]);
+                }
+                else{
+                    dalsi = sucet-hlavny[i];
+                }
+                
+            }
+        }
+        
+   }
+    long long naj=1000000000000000000;
+   for(auto i : vedlajsi[1]){
+       if(i!=-1){
+           naj = min(naj,i);
+       }
+   }
+   cout<<naj<<endl;
+    return 0;
 
-    
-    cout<<b[0]<<endl;
+
 
 }

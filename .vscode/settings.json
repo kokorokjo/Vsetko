@@ -2,7 +2,11 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "iosfwd": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "stacktrace": "cpp"
     },
-    "cmake.sourceDirectory": "/home/martin/Desktop/Programy/asm_c_cpp-develop/asm_c_cpp-develop"
+    "cmake.sourceDirectory": "/home/martin/Desktop/Vsetko/asm_c_cpp-develop/asm_c_cpp-develop"
 }
