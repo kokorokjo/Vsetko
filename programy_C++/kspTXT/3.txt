@@ -1,9 +1,10 @@
-Hlavná logika je že prejdeme všetky možnosti trojíc a vypočítame či môže byť.
+Hlavná logika je že pojdem postupne a bydeme zistovat ci krava stihne dojst ak nie tak kolko by ch bolo trebat zdvihnut pred nou.
 
-Začneme tým že si zobereme prvé 3 a vypočitame či môŽe byť v(i,j)=v(i,k)+v(k,j) (najprv i=0,j=1,k=2
-potom i=0,j=2,k=1 a atď) potom posúvam posledný index až na koniec potom posuniem 2. index o jedna a zase to iste 
-(posúvam posledný index) nakoniec posuvam aj prvý. Medzi tým si zapisujem čo vyhovujú.
+Postupne nacitavame vstup a pozrieme sa na kravu ak stiha dojst tak super ak nie tak bude len zavadzat ostatnym takze si zapiseme(+1)
+Nasledne ked porejdeme k dalsiej krave a vieme ze pred nout to nejake nestihnu tak si pripocitame tolko zdvihnuti kolko krav to pred nou nestihne
+tak pokracujeme az kym nemame dost krav a vypiseme pocet zdvihnuti alebo kym nejsme na konci tak vieme ze nemame dost krav a vypiseme -1.
 
-časová zložitosť- prejdenie pola pre každý index čo je 3 indexi n na 3 o(n3).
 
-pamäťová zložitosť- pamätáme si pola o(n)
+časová zložitosť- kazdu kravu raz o(n).
+
+pamäťová zložitosť- netreba si nic pamatat iba posti krav a zdvihou o(1)
