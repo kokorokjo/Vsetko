@@ -1,5 +1,0 @@
-c:\> cmake -S . -B build
-c:\> cmake --build build --config Release
-
-Or you can just open the solution and build in the GUI
-c:\> start build\asm_c_cpp.sln

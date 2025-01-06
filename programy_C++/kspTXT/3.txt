@@ -1,14 +1,10 @@
-Hlavná logika je že pojdem od zadu a budem si zapisovať na koľko prezutí sa viem dostať do cieľa.
+Hlavná logika je že pojdem postupne a bydeme zistovat ci krava stihne dojst ak nie tak kolko by ch bolo trebat zdvihnut pred nou.
 
-Miesta s topankami si dam do binárneho stromu v poradí ako sú za senou (aby sa mi lepšie prehladávalo) a zapisem si 2 hodnoty
-poličko na akom sú umiestnené a počet políčok ktoré sa s nimi dá prejsť. Nasledne idem od zadu pozriem sa na topanky a Zistím
-či sa da s nimi prejsť az do ciela ak hej prepíšem poečet krokov na 1(počeť potrebných prezutí) následne prejdem všetkých rodicou a prepisujem
-ak ==-1 alebo ak prvé z páru je > ako políčko kde sú topanky(toto udavá ake najnižšie políčko ma ako dieťa) a druhe z páru prepíšem ak je > ako počet prezutí
-na ktoré sa viem dostať do ciela z daného políčka. Ale ak sa neviem dostať do cieľa priamo tak idem od koreňa a pozeram napravo ak prvé z dvojce (najnižšie číslo políčka)
-je <ako políčko kde sa viem z daneho políčka dostať tak sa presuniem tam ale najprv zistim či na ľavej strane je menšie 2. z dvojce lebo vieme že naľavo budu políčka na ktoré sa viem určite dostať alebo som ich ešte nespracoval.
-takto sa dostanem až k poslednému políčku(listu). Toto opakujem s každým políčkom s topánkami a nakoniec sa pozriem od začiatku a vypíšem vysledok.
-stromu 
+Postupne nacitavame vstup a pozrieme sa na kravu ak stiha dojst tak super ak nie tak bude len zavadzat ostatnym takze si zapiseme(+1)
+Nasledne ked porejdeme k dalsiej krave a vieme ze pred nout to nejake nestihnu tak si pripocitame tolko zdvihnuti kolko krav to pred nou nestihne
+tak pokracujeme az kym nemame dost krav a vypiseme pocet zdvihnuti alebo kym nejsme na konci tak vieme ze nemame dost krav a vypiseme -1.
 
-časová zložitosť- prejdem každé policko s topankami a prechadzam maximalne výšku stromu o(n log n).
 
-pamäťová zložitosť- pamätáme si polička s topánkami o(n)
+časová zložitosť- kazdu kravu raz o(n).
+
+pamäťová zložitosť- netreba si nic pamatat iba posti krav a zdvihou o(1)

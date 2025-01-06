@@ -1,8 +1,0 @@
-{
-    "C_Cpp.errorSquiggles": "disabled",
-    "files.associations": {
-        "iosfwd": "cpp",
-        "ostream": "cpp"
-    },
-    "cmake.sourceDirectory": "C:/Users/marti/Desktop/Vsetko/asm_c_cpp-develop/asm_c_cpp-develop/cpp"
-}

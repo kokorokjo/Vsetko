@@ -19,7 +19,7 @@ int main(){
             pozicia+=p;
             pocitadlo++;
             if(pozicia>=n){
-                if(pocitadlo<min){
+                if(pocitadlo<min){ 
                     min=pocitadlo;
                 }
                 b[i]=min;
